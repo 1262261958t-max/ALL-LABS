@@ -1,0 +1,48 @@
+#include<stdio.h>
+int changeRef(int*p){
+*p = 100;
+return *p;
+}
+int main(){
+int b = 20;
+changeRef(&b);
+printf("After call by reference, b=%d\n",b);
+return 0;
+}
+
+#include<stdio.h>
+int change (int x){
+x=50;
+return x;
+}
+int main(){
+int a = 10;
+change(a);
+printf("After call by value, a=%d\n",a);
+return 0;
+}
+
+#include<stdio.h>
+void swap(float*a,float*b)
+{
+float temp;
+temp =*a;
+*a = *b;
+*b = temp;
+}
+int main()
+{
+float temp1,temp2;
+printf("Enter temperature of Incubator 1:");
+scanf("%f",&temp1);
+printf("Enter teperature of incubator 2:");
+scanf("%f",&temp2);
+printf("\nBefore swapping: \n");
+printf("Incubator 1 temperature=%.2fc\n",temp1);
+printf("Incubator 2 temperature=%.2fc\n",temp2);
+swap(&temp1,&temp2);
+printf("\nAfter swapping: \n");
+printf("Incubator 1 temperature=%.2fc\n",temp1);
+printf("Incubator 2 temperature=%.2fc\n",temp2);
+return 0;
+}
