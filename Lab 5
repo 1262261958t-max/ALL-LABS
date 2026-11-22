@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main() {
+char str1[20], str2[20];
+int ch, i, j;
+do{
+printf("\tMENU\n");
+printf("------------------------------\n");
+printf("1: FIND LENGTH OF STRING\n");
+printf("2: CONCATENATE STRINGS\n");
+printf("3: COPY STRINGS\n");
+printf("4: COMPARE STRINGS\n");
+printf("5: EXIT\n");
+printf("------------------------------\n");
+printf("ENTER YOUR CHOICE");
+scanf("%d", &ch);
+switch (ch) {
+case 1:
+printf("ENTER STRING: ");
+scanf("%s", str1);
+i = strlen(str1);
+printf("LENGTH OF STRING: %d\n\n", i);
+break;
+case 2:
+printf("ENTER FIRST STRING: ");
+scanf("%s",str1);
+printf("ENTER SECOND STRING:");
+
+scanf("%s", str2);
+strcat(str1, str2);
+printf("STRING AFTER CONCATENATION: %s\n\n" , str1);
+break;
+case 3:
+printf("ENTER A STRING1:");
+scanf("%s", str1);
+printf("ENTER A STRING2:");
+scanf("%s", str2);
+printf("\nstring before copied:\nstring=\"%s\", string2=\"%s\"\n", str1,
+str2);
+strcpy(str2, str1);
+printf("------------------------------\n");
+printf("WE ARE COPYING STRING sting1 to string2\n");
+printf("------------------------------\n");
+printf("STRING AFTER COPIED:\nstring1=\"%s\",
+string2=\"%s\"\n\n", str1,str2);
+break;
+case 4:
+printf("ENTER FIRST STRING:");
+scanf("%s", str1);
+scanf("%s", str2);
+j = strcmp(str1, str2);
+if (j==0) {
+printf("STRINGS ARE SAME\n\n");
+}
+else {
+printf("STRINGS ARE NOT SAME\n\n");
+}
+break;
+case 5:
+exit(0);
+break;
+default:
+printf("INVALID INPUT. PLEASE ENTER VALID INPUT.\n\n");
+
+}
+}
+while (ch !=5);
+return 0;
+}
